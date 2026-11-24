@@ -15,6 +15,24 @@ export function Admin() {
     }, [])
 
     return (<>
+        <table>
+            <thead>
+                <th>Nev</th>
+                <th>Ar</th>
+                <th>Raktaron</th>
+                <th>Kiadas datuma</th>
+            </thead>
 
+            <tbody>
+                {telefonok.map(item => (
+                    <tr key={item.id}>
+                        <td>{item.nev}</td>
+                        <td>{item.ar}</td>
+                        <td>{item.raktaron ? "igen" : "nem"}</td>
+                        <td>{item.kiadasDatuma}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     </>)
 }
