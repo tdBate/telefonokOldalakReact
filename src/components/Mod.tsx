@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { deleteItem, loadData, modifyItem, pushData } from "../utility"
+import { loadData, modifyItem } from "../utility"
 import type { Phone } from "../models"
 
 export function Mod() {
