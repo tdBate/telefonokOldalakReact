@@ -59,47 +59,56 @@ export function Admin() {
     }
 
     return (<>
-        <form>
-            <label>Név</label>
-            <input value={nev} onChange={(e) => setNev(e.target.value)} type="text" /><br />
+        <div className="container">
+            <div className="row">
+                <div className="col-sm-12">
+                    <form className="form">
+                        <label className="form-label">Név</label>
+                        <input className="form-control" value={nev} onChange={(e) => setNev(e.target.value)} type="text" /><br />
 
-            <label htmlFor="">Ár</label>
-            <input value={ar} onChange={(e) => setAr(parseInt(e.target.value))} type="number" /><br />
+                        <label className="form-label" htmlFor="">Ár</label>
+                        <input className="form-control" value={ar} onChange={(e) => setAr(parseInt(e.target.value))} type="number" /><br />
 
-            <label htmlFor="">Raktáron</label>
-            <input checked={raktaron} onChange={(e) => setRaktaron(e.target.checked)} type="checkbox" /><br />
+                        <label className="form-label" htmlFor="">Raktáron: </label>
+                        <input className="form-checkbox" checked={raktaron} onChange={(e) => setRaktaron(e.target.checked)} type="checkbox" /><br />
 
-            <label htmlFor="">Kiadás dátuma</label>
-            <input value={datum.toLocaleDateString("sv-SE")} onChange={(e) => setDatum(new Date(e.target.value))} type="date" /> <br />
+                        <label className="form-label" htmlFor="">Kiadás dátuma</label>
+                        <input className="form-control" value={datum.toLocaleDateString("sv-SE")} onChange={(e) => setDatum(new Date(e.target.value))} type="date" /> <br />
 
-            <button type="submit" onClick={handlePost}>Submit</button>
-        </form>
+                        <button className="btn btn-primary" type="submit" onClick={handlePost}>Submit</button>
+                    </form>
+                </div>
 
-        <table>
-            <thead>
-                <th>Nev</th>
-                <th>Ar</th>
-                <th>Raktaron</th>
-                <th>Kiadas datuma</th>
-            </thead>
+                <div className="col-sm-12 mt-5">
+                    <table className="table table-striped">
+                        <thead className="the">
+                            <th>Nev</th>
+                            <th>Ar</th>
+                            <th>Raktaron</th>
+                            <th>Kiadas datuma</th>
+                        </thead>
 
-            <tbody>
-                {telefonok.map(item => (
-                    <tr key={item.id}>
-                        <td>{item.nev}</td>
-                        <td>
-                            {item.ar}
-                            <div>
-                                <button onClick={() => modositAr(item, 1)}>+</button>
-                                <button onClick={() => modositAr(item, -1)}>-</button>
-                            </div>
-                        </td>
-                        <td><button onClick={() => { flipRaktaron(item) }}>{item.raktaron ? "igen" : "nem"}</button></td>
-                        <td>{item.kiadasDatuma}</td>
-                        <td><button onClick={() => { handleTorles(item.id!) }}>Törlés</button></td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+                        <tbody>
+                            {telefonok.map(item => (
+                                <tr key={item.id}>
+                                    <td>{item.nev}</td>
+                                    <td>
+                                        {item.ar}
+                                        <div>
+                                            <button className="btn" onClick={() => modositAr(item, 1)}>+</button>
+                                            <button className="btn" onClick={() => modositAr(item, -1)}>-</button>
+                                        </div>
+                                    </td>
+                                    <td><button className="btn btn-success" onClick={() => { flipRaktaron(item) }}>{item.raktaron ? "igen" : "nem"}</button></td>
+                                    <td>{item.kiadasDatuma}</td>
+                                    <td><button className="btn btn-danger" onClick={() => { handleTorles(item.id!) }}>Törlés</button></td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
     </>)
 }

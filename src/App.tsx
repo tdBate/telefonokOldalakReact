@@ -3,7 +3,7 @@ import { Admin } from "./components/Admin"
 function App() {
   return (
     <>
-      <h1>Phones</h1>
+      <h1 className="text-center">Phones</h1>
       <Admin></Admin>
     </>
   )
