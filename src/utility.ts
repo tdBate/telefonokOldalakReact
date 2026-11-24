@@ -38,3 +38,17 @@ export async function deleteItem(id: string) {
     }
 
 }
+
+export async function modifyItem(phone: Phone) {
+    try {
+        const response = await fetch(BASE_URL + "/" + phone.id, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(phone),
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}

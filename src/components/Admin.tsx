@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { deleteItem, loadData, pushData } from "../utility"
+import { deleteItem, loadData, modifyItem, pushData } from "../utility"
 import type { Phone } from "../models"
 
 export function Admin() {
@@ -38,6 +38,16 @@ export function Admin() {
         setTelefonok(telefonok.filter(item => item.id != id))
     }
 
+    async function flipRaktaron(phone: Phone) {
+        phone.raktaron = !phone.raktaron;
+        await modifyItem(phone);
+
+        const ujTelefonok = [...telefonok];
+        const index = ujTelefonok.findIndex(allat => allat.id == phone.id);
+        ujTelefonok[index].raktaron = phone.raktaron;
+        setTelefonok(ujTelefonok);
+    }
+
     return (<>
         <form>
             <label>Név</label>
@@ -67,8 +77,14 @@ export function Admin() {
                 {telefonok.map(item => (
                     <tr key={item.id}>
                         <td>{item.nev}</td>
-                        <td>{item.ar}</td>
-                        <td>{item.raktaron ? "igen" : "nem"}</td>
+                        <td>
+                            {item.ar}
+                            <div>
+                                <button>+</button>
+                                <button>-</button>
+                            </div>
+                        </td>
+                        <td><button onClick={() => { flipRaktaron(item) }}>{item.raktaron ? "igen" : "nem"}</button></td>
                         <td>{item.kiadasDatuma}</td>
                         <td><button onClick={() => { handleTorles(item.id!) }}>Törlés</button></td>
                     </tr>
