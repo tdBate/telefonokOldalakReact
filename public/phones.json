@@ -1,74 +1,89 @@
 {
   "phones": [
     {
-      "id": 1,
+      "id": "1",
       "nev": "iPhone 17 Pro Max",
       "ar": 649990,
       "raktaron": true,
       "kiadasDatuma": "2025-09-19"
     },
     {
-      "id": 2,
+      "id": "2",
       "nev": "Galaxy S25 Ultra",
       "ar": 529990,
       "raktaron": true,
       "kiadasDatuma": "2025-02-03"
     },
     {
-      "id": 3,
+      "id": "3",
       "nev": "Xiaomi 15",
       "ar": 329990,
       "raktaron": false,
       "kiadasDatuma": "2025-03-02"
     },
     {
-      "id": 4,
+      "id": "4",
       "nev": "Google Pixel 10 Pro",
       "ar": 449990,
       "raktaron": true,
       "kiadasDatuma": "2025-08-28"
     },
     {
-      "id": 5,
+      "id": "5",
       "nev": "OnePlus 13",
       "ar": 389990,
       "raktaron": true,
       "kiadasDatuma": "2025-01-07"
     },
     {
-      "id": 6,
+      "id": "6",
       "nev": "iPhone 16",
       "ar": 329990,
       "raktaron": false,
       "kiadasDatuma": "2024-09-20"
     },
     {
-      "id": 7,
+      "id": "7",
       "nev": "Samsung Galaxy A56",
       "ar": 159990,
       "raktaron": true,
       "kiadasDatuma": "2025-03-10"
     },
     {
-      "id": 8,
+      "id": "8",
       "nev": "Xiaomi Redmi Note 14 Pro",
       "ar": 119990,
       "raktaron": false,
       "kiadasDatuma": "2024-09-26"
     },
     {
-      "id": 9,
+      "id": "9",
       "nev": "Motorola Edge 60 Pro",
       "ar": 219990,
       "raktaron": true,
       "kiadasDatuma": "2025-05-13"
     },
     {
-      "id": 10,
+      "id": "10",
       "nev": "Nothing Phone (3)",
       "ar": 299990,
       "raktaron": true,
       "kiadasDatuma": "2025-07-15"
+    },
+    {
+      "nev": "asd",
+      "ar": 3,
+      "raktaron": false,
+      "kiadasDatuma": "2026-11-24",
+      "id": "7ovm4CY20xc"
+    },
+    {
+      "nev": "true",
+      "ar": 2,
+      "raktaron": false,
+      "kiadasDatuma": "2026-11-24",
+      "id": "yG1xoP64JAw"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
