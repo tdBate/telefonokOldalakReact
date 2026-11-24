@@ -44,7 +44,17 @@ export function Admin() {
 
         const ujTelefonok = [...telefonok];
         const index = ujTelefonok.findIndex(allat => allat.id == phone.id);
-        ujTelefonok[index].raktaron = phone.raktaron;
+        ujTelefonok[index] = phone;
+        setTelefonok(ujTelefonok);
+    }
+
+    async function modositAr(phone: Phone, ertek: number) {
+        phone.ar += ertek;
+        await modifyItem(phone);
+
+        const ujTelefonok = [...telefonok];
+        const index = ujTelefonok.findIndex(item => item.id == phone.id);
+        ujTelefonok[index] = phone;
         setTelefonok(ujTelefonok);
     }
 
@@ -80,8 +90,8 @@ export function Admin() {
                         <td>
                             {item.ar}
                             <div>
-                                <button>+</button>
-                                <button>-</button>
+                                <button onClick={() => modositAr(item, 1)}>+</button>
+                                <button onClick={() => modositAr(item, -1)}>-</button>
                             </div>
                         </td>
                         <td><button onClick={() => { flipRaktaron(item) }}>{item.raktaron ? "igen" : "nem"}</button></td>
