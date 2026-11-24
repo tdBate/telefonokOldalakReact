@@ -83,6 +83,13 @@
       "raktaron": false,
       "kiadasDatuma": "2026-11-24",
       "id": "yG1xoP64JAw"
+    },
+    {
+      "nev": "true",
+      "ar": 0,
+      "raktaron": true,
+      "kiadasDatuma": "2026-11-24",
+      "id": "JpQr7Eo4n_o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

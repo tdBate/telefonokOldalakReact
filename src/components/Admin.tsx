@@ -41,7 +41,7 @@ export function Admin() {
             <input value={ar} onChange={(e) => setAr(parseInt(e.target.value))} type="number" /><br />
 
             <label htmlFor="">Raktáron</label>
-            <input value={raktaron ? "checked" : ""} onChange={(e) => setRaktaron(e.target.value == "checked" ? true : false)} type="checkbox" /><br />
+            <input checked={raktaron} onChange={(e) => setRaktaron(e.target.checked)} type="checkbox" /><br />
 
             <label htmlFor="">Kiadás dátuma</label>
             <input value={datum.toLocaleDateString("sv-SE")} onChange={(e) => setDatum(new Date(e.target.value))} type="date" /> <br />
