@@ -5,3 +5,5 @@ export interface Phone {
     raktaron: boolean
     kiadasDatuma: string
 }
+
+export type View = "admin" | "mod" | "user";
