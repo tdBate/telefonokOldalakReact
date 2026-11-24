@@ -1,5 +1,5 @@
 export interface Phone {
-    id?: number
+    id?: string
     nev: string
     ar: number
     raktaron: boolean

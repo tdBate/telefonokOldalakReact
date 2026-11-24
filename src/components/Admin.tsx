@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { loadData, pushData } from "../utility"
+import { deleteItem, loadData, pushData } from "../utility"
 import type { Phone } from "../models"
 
 export function Admin() {
@@ -30,6 +30,12 @@ export function Admin() {
 
         const resPhone: Phone = (await pushData(ujPhone))!;
         setTelefonok([...telefonok, resPhone])
+    }
+
+    async function handleTorles(id: string) {
+        await deleteItem(id);
+
+        setTelefonok(telefonok.filter(item => item.id != id))
     }
 
     return (<>
@@ -64,6 +70,7 @@ export function Admin() {
                         <td>{item.ar}</td>
                         <td>{item.raktaron ? "igen" : "nem"}</td>
                         <td>{item.kiadasDatuma}</td>
+                        <td><button onClick={() => { handleTorles(item.id!) }}>Törlés</button></td>
                     </tr>
                 ))}
             </tbody>

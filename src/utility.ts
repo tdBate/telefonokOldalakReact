@@ -1,8 +1,10 @@
 import type { Phone } from "./models";
 
+const BASE_URL = "http://localhost:3000/phones";
+
 export async function loadData() {
     try {
-        const response = await fetch("http://localhost:3000/phones");
+        const response = await fetch(BASE_URL);
         const data = await response.json() as Phone[];
         return data;
     } catch (e) {
@@ -12,7 +14,7 @@ export async function loadData() {
 
 export async function pushData(phone: Phone) {
     try {
-        const response = await fetch("http://localhost:3000/phones"
+        const response = await fetch(BASE_URL
             , {
                 "method": "POST",
                 headers: { "Content-type": "application/json" },
@@ -21,6 +23,16 @@ export async function pushData(phone: Phone) {
         );
         const data = await response.json() as Phone;
         return data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export async function deleteItem(id: string) {
+    try {
+        fetch(BASE_URL + "/" + id, {
+            method: 'DELETE'
+        })
     } catch (e) {
         console.log(e);
     }
