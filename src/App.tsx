@@ -13,9 +13,9 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12 mb-5">
-            <button onClick={() => setView("admin")} className="btn btn-primary">Admin</button>
-            <button onClick={() => setView("mod")} className="btn btn-primary">Mod</button>
-            <button onClick={() => setView("user")} className="btn btn-primary">User</button>
+            <button onClick={() => setView("admin")} className={view == "admin" ? "btn btn-success" : "btn btn-primary"}>Admin</button>
+            <button onClick={() => setView("mod")} className={view == "mod" ? "btn btn-success" : "btn btn-primary"}>Mod</button>
+            <button onClick={() => setView("user")} className={view == "user" ? "btn btn-success" : "btn btn-primary"}>User</button>
           </div>
 
           <div className="col-sm-12">
