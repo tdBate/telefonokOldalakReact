@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Admin } from "./components/Admin"
 import type { View } from "./models"
+import { Mod } from "./components/Mod";
 
 function App() {
   const [view, setView] = useState<View>("user");
@@ -18,6 +19,7 @@ function App() {
 
           <div className="col-sm-12">
             {view == "admin" && (<Admin></Admin>)}
+            {view == "mod" && (<Mod></Mod>)}
           </div>
         </div>
       </div>
